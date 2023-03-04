@@ -1,8 +1,17 @@
 package com.practica.practica.models;
 
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
+
 public class Contactar {
+    @NotEmpty(message = "El nombre no puede estar vacío")
+    @Size(min=1, max=50)
     private String nombre;
+    @NotEmpty(message = "El email no puede estar vacío")
+    @Size(min=4, max=150)
     private String email;
+    @NotEmpty(message = "El mensaje no puede estar vacío")
+    @Size(min=1, max=500)
     private String mensaje;
 
     public Contactar() {}
